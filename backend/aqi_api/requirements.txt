@@ -1,0 +1,26 @@
+# --- Framework principal ---
+fastapi==0.115.2
+uvicorn==0.30.6
+
+# --- HTTP requests ---
+requests==2.32.3
+python-dotenv==1.0.1
+
+# --- Procesamiento de datos ---
+pandas==2.2.3
+numpy==1.26.4
+pyarrow==17.0.0
+
+# --- Almacenamiento en la nube ---
+azure-storage-blob==12.21.0
+boto3==1.35.27  # Para credenciales temporales NASA S3
+
+# --- API y formato ---
+pydantic==2.9.2
+pydantic-core==2.23.4
+
+# --- Azure Functions runtime (solo si ejecutas en Azure) ---
+azure-functions==1.20.0
+
+# --- Extra (útil para local dev y notebook prototyping) ---
+ipykernel==6.29.5

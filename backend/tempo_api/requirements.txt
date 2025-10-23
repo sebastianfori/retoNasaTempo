@@ -1,0 +1,24 @@
+
+# --- Azure Function Runtime ---
+azure-functions
+
+# --- Core & Data Processing ---
+pandas
+numpy
+requests
+geopy
+
+# --- File formats ---
+pyarrow  # soporte para Parquet
+
+# --- Azure SDKs ---
+azure-storage-blob
+azure-identity  # por si luego autenticas con Managed Identity
+
+# --- Logging & Utilities ---
+python-dotenv
+
+# --- (Opcional) ML / Forecasting futuros ---
+scikit-learn
+boto3
+netCDF4
