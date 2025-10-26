@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
-// Fix de íconos para Leaflet en bundlers
 import markerIcon2xUrl from 'leaflet/dist/images/marker-icon-2x.png'
 import markerIconUrl from 'leaflet/dist/images/marker-icon.png'
 import markerShadowUrl from 'leaflet/dist/images/marker-shadow.png'
@@ -45,7 +44,7 @@ export default function MapPicker({ onPick }) {
   return (
     <div className="map-wrap">
       <MapContainer
-        center={[39.8, -98.6]} // centro aproximado de Norteamérica
+        center={[39.8, -98.6]}
         zoom={4}
         minZoom={3}
         maxBounds={boundsNA}

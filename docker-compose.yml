@@ -1,21 +1,23 @@
 version: "3.9"
+
 services:
   api:
-    build: ./backend
-    container_name: aireclaro-api
+    build: ./backend/aqi_api
+    container_name: aqi-api
     ports:
-      - "8080:8080"
+      - "8000:8000"
     environment:
-      - NODE_ENV=production
+      - PYTHONUNBUFFERED=1
     restart: unless-stopped
 
   web:
     build: ./frontend
-    container_name: aireclaro-web
+    container_name: aqi-web
     ports:
       - "5173:5173"
     environment:
-      - VITE_API_BASE_URL=http://localhost:8080
+      # El front llama a la API publicada en el host
+      - VITE_API_BASE_URL=http://localhost:8000
     depends_on:
       - api
     restart: unless-stopped

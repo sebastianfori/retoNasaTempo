@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 from app.core import sanitize_json
 from app.tempo_cache import tempo_cache
 from app.core import combine_aqi_sources
+from fastapi.middleware.cors import CORSMiddleware
+
 
 load_dotenv()
 
@@ -22,9 +24,14 @@ async def lifespan(app: FastAPI):
     print("[STARTUP] Cache inicial lista.")
     yield
     print("[SHUTDOWN] Cerrando API Air Quality...")
-
 app = FastAPI(title="Air Quality API", version="1.1", lifespan=lifespan)
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # ajustá a tus hosts en prod
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.get("/aqi")
 def get_aqi(lat: float = Query(...), lon: float = Query(...)):
     """
