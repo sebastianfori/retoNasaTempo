@@ -4,6 +4,8 @@ services:
   api:
     build: ./backend/aqi_api
     container_name: aqi-api
+    env_file:
+      - ./backend/aqi_api/.env   # 👈 importante
     ports:
       - "8000:8000"
     environment:
