@@ -59,3 +59,31 @@ body { margin: 0; background: var(--bg); color: #fff; font-family: ui-sans-serif
 .tbl th { color: #c7d2fe; }
 
 .actions { margin: 18px 0; }
+/* Imagen giratoria arriba a la derecha */
+.rotating-badge {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  opacity: 0.15;
+  animation: spin-forever 30s linear infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes spin-forever {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .rotating-badge {
+    width: 70px;
+    opacity: 0.12;
+  }
+}
+
