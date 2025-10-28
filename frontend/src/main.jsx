@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import MapPage from './pages/MapPage'
 import ResultPage from './pages/ResultPage'
-import Login from './pages/Login'                 // 👈 nuevo
-import RequireAuth from './auth/RequireAuth'      // 👈 nuevo
-import { AuthProvider } from './auth/AuthContext' // 👈 nuevo
+import Login from './pages/Login'                 
+import RequireAuth from './auth/RequireAuth'      
+import { AuthProvider } from './auth/AuthContext' 
 
 import './styles.css'
 
